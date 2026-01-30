@@ -6,13 +6,13 @@ A powerful Streamlit web application that intelligently summarizes web pages and
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.0+-red.svg)](https://streamlit.io/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-## ✨ Features<img width="1898" height="884" alt="Screenshot 2026-01-31 045225" src="https://github.com/user-attachments/assets/36048bab-11c1-4f10-b9b8-b34f981aa006" />
+<img width="1898" height="884" alt="Screenshot 2026-01-31 045225" src="https://github.com/user-attachments/assets/36048bab-11c1-4f10-b9b8-b34f981aa006" />
 
-
-- 🌐 **Website Summarization** - Extract and summarize article content from any URL
-- ▶️ **YouTube Video Summarization** - Download audio, transcribe, and summarize videos
-- 🧠 **Fast LLM Inference** - Powered by Groq's high-performance API
-- 🌍 **Multi-language Support** - Generate summaries in:
+## ✨ Features
+-  **Website Summarization** - Extract and summarize article content from any URL
+-  **YouTube Video Summarization** - Download audio, transcribe, and summarize videos
+-  **Fast LLM Inference** - Powered by Groq's high-performance API
+-  **Multi-language Support** - Generate summaries in:
   - English
   - Hindi
   - French
@@ -42,7 +42,7 @@ URLandYTSummarizer/
 └── .gitignore         # Ignored files (venv, cache, secrets)
 ```
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### 1️⃣ Clone the Repository
 
