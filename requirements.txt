@@ -1,0 +1,16 @@
+streamlit
+validators
+openai-whisper
+yt-dlp
+ffmpeg-python
+
+langchain
+langchain-core
+langchain-community
+langchain-groq
+
+unstructured
+unstructured[html]
+
+torch
+numpy
