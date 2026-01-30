@@ -13,10 +13,10 @@ A powerful Streamlit web application that intelligently summarizes web pages and
 -  **YouTube Video Summarization** - Download audio, transcribe, and summarize videos
 -  **Fast LLM Inference** - Powered by Groq's high-performance API
 -  **Multi-language Support** - Generate summaries in:
-  - English
-  - Hindi
-  - French
-  - Spanish
+    - English
+    - Hindi
+    - French
+    - Spanish
 - 📥 **Download Summaries** - Save summaries as `.txt` files
 - ⚡ **Token-safe Processing** - Automatic truncation for large content
 
