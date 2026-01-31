@@ -50,7 +50,7 @@ summary_language = st.selectbox(
 # ---------------- YOUTUBE → WHISPER ----------------
 @st.cache_resource
 def load_whisper_model():
-    return whisper.load_model("base")   # balance of speed & accuracy
+    return whisper.load_model("base")   
 
 
 def youtube_to_text(video_url: str) -> str:
@@ -60,27 +60,30 @@ def youtube_to_text(video_url: str) -> str:
             "format": "bestaudio/best",
             "outtmpl": os.path.join(tmpdir, "%(id)s.%(ext)s"),
             "quiet": True,
-            "postprocessors": [
-                {
-                    "key": "FFmpegExtractAudio",
-                    "preferredcodec": "mp3",
-                    "preferredquality": "192",
-                }
-            ],
+            "user_agent": (
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                "AppleWebKit/537.36 (KHTML, like Gecko) "
+                "Chrome/120.0.0.0 Safari/537.36"
+            ),
         }
 
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             info = ydl.extract_info(video_url, download=True)
 
-        audio_file = os.path.join(tmpdir, f"{info['id']}.mp3")
+        audio_file = None
+        for file in os.listdir(tmpdir):
+            if file.startswith(info["id"]):
+                audio_file = os.path.join(tmpdir, file)
+                break
 
-        if not os.path.exists(audio_file):
-            raise RuntimeError("Audio download failed. FFmpeg could not create audio file.")
+        if not audio_file:
+            raise RuntimeError("Audio download failed. No audio file found.")
 
         model = load_whisper_model()
         result = model.transcribe(audio_file)
 
         return result["text"]
+
 
 
 
